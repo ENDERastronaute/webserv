@@ -1,8 +1,41 @@
+'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react"
 
-export function useWallpaper() {
-    const [wallpaper, setWallpaper] = useState('')
+export default function useWallpaper() {
+    const [wallpaper, setWallpaper] = useState(null);
 
-    fetch('')
+    const fetchWallpaper = async () => {
+        try {
+            const response = await fetch('/api/wallpaper');
+            const data = await response.json();
+
+            setWallpaper(data.wallpaper);
+
+        } catch {}
+    }
+
+    const updateWallpaper = async (newWallpaper: string) => {
+        try {
+            const response = await fetch('/api/wallpaper', {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ wallpaper: newWallpaper })
+            })
+            const data = await response.json();
+
+            console.log(data);
+            
+            setWallpaper(data.wallpaper);
+
+        } catch {}
+    }
+
+    useEffect(() => {
+        fetchWallpaper();
+    }, []);
+
+    return { wallpaper, updateWallpaper };
 }

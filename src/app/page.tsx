@@ -1,6 +1,6 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+
 import { Metadata } from "next";
+import Login from "./page.components";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -8,8 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-
-  
-
-  return;
+  return (
+    <Login></Login>
+  )
 }
