@@ -1,0 +1,17 @@
+
+
+.btn {
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+        .icon {
+            color: rgb(201, 0, 0);
+        }
+    }
+}

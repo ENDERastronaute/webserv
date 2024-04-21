@@ -27,9 +27,31 @@ You can now start the program with :
 $ npm run dev
 ```
 
+# Creating applications
+
+That's not something most of you will need but here's how to create/modify applications :
+
+first, create a component in `./apps/` (file name must be app name) :
+```bash
+$ mkdir ./apps/{my_app}/ && touch ./apps/{my_app}/index.tsx
+```
+
+> /!\ App name must be in lowercase and spaced with underscores, like "app_name".
+
+Next, create your component.
+
+Finally, add your app name in the list `applications=` in `./configs/config.cfg`.
+
+```cfg
+applications=["Settings", "File_Explorer", "{My_App_Name}"]
+```
+
+> There's a lot of hooks and server side things you can use in your app.
+
+> TODO : make a tutorial.
+
 # Known bugs
 
 Here's a list of known bugs
 
-- Wallpapers list can be empty for some reason and you'll need to manually change `wallpaper=undefined` to `wallpaper=` in `configs/config.cfg` if you try to change wallpapers in the login page.
-- Current wallpaper can be empty too but you just need to refresh.
+- None, I don't know if I should be happy or worried about that.

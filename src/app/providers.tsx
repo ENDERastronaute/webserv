@@ -11,7 +11,7 @@ export default function Providers({ children }: ProvidersProps) {
     const { wallpaper, updateWallpaper } = useWallpaper();
 
     return (
-        <WallpaperContext.Provider value={[ wallpaper, updateWallpaper ]}>
+        <WallpaperContext.Provider value={{ wallpaper, updateWallpaper }}>
             {children}
         </WallpaperContext.Provider>
     )

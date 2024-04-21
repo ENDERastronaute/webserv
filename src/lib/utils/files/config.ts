@@ -8,41 +8,41 @@ interface ReadValues {
     formattedKey: string;
 }
 
-export default class Config {
-    private static _cfg: Config;
-    private _wallpaper: string = '';
+type Cfg = {
+    [key: string]: any;
+}
 
-    public static get cfg(): Config {
-        if (!Config._cfg) {
-            Config._cfg = new Config();
-        }
-
-        return Config._cfg;
-    }
-
+class ConfigManager {
+    private _cfg: Cfg = {};
 
 
     private async init() {
-        const wallpaper = await this.get('wallpaper') as string;
-        this.wallpaper = wallpaper !== '' ? wallpaper : process.env.DEFAULT_WALLPAPER as string
+        const data = await readFile('./configs/config.cfg', 'utf-8');
+    
+        const lines = data.split('\n');
+
+        lines.forEach(line => {
+            const match = line.match(/^([^=]+)=(.*)$/);
+
+            if (match) {
+                const key = match[1].trim();
+                let value = match[2].trim();
+
+                if (value.startsWith('[') || value.startsWith('{')) {
+                    try {
+                        value = JSON.parse(value);
+                    } catch {
+                        console.error(`Can't parse value of '${value}', did you forget a comma or to close the object/array ?`);
+                    }
+                }
+
+                this._cfg[key] = value;
+            }
+        })
     }
 
-    public get wallpaper(): string {
-        return this._wallpaper;
-    }
-
-    public set wallpaper(value: string) {
-        this._wallpaper = value;
-    }
-
-    private constructor() {
-        this.init();
-    }
-
-    public async get(key: string): Promise<string|undefined> {
-        const { index, nlindex, data, formattedKey } = await this.read(key);
-
-        return data.substring(index + formattedKey.length, nlindex)
+    public get cfg(): Cfg {
+        return this._cfg;
     }
 
     public async set(key: string, value: string) {
@@ -56,7 +56,7 @@ export default class Config {
     private async read(key: string): Promise<ReadValues> {
         const formattedKey = key.toLowerCase() + '=';
 
-        let data = await readFile('./configs/config.cfg', 'utf-8');
+        const data = await readFile('./configs/config.cfg', 'utf-8');
 
         const index = data.indexOf(formattedKey);
     
@@ -74,4 +74,15 @@ export default class Config {
             formattedKey: formattedKey
         }
     }
+
+    public static async getNewInstance() {
+        const instance = new this;
+        await instance.init();
+
+        return instance;
+    }
 }
+
+const config = await ConfigManager.getNewInstance();
+
+export default config;

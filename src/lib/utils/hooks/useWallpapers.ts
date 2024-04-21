@@ -34,7 +34,7 @@ export default function useWallpapers() {
     }
 
     useEffect(() => {
-        fetchWallpapers();
+        (async () => await fetchWallpapers())()
     }, []);
 
     return { wallpapers, updateWallpapers };

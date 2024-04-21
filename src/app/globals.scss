@@ -2,4 +2,25 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    user-select: none;
+    list-style: none;
+}
+
+.app, .tab {
+    border-radius: 0 0 19px 19px;
+    width: 100%;
+    height: calc(100% - 32px);
+}
+
+.app_container {
+    border-radius: 19px;
+}
+
+.topbar {
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+}
+
+.app_open {
+    display: block !important;
 }

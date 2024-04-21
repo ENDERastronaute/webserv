@@ -25,8 +25,6 @@ export default function useWallpaper() {
                 body: JSON.stringify({ wallpaper: newWallpaper })
             })
             const data = await response.json();
-
-            console.log(data);
             
             setWallpaper(data.wallpaper);
 
@@ -34,7 +32,7 @@ export default function useWallpaper() {
     }
 
     useEffect(() => {
-        fetchWallpaper();
+        (async () => await fetchWallpaper())()
     }, []);
 
     return { wallpaper, updateWallpaper };
