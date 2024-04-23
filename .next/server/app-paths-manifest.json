@@ -1,5 +1,8 @@
 {
   "/view/page": "app/view/page.js",
+  "/api/dock/route": "app/api/dock/route.js",
+  "/api/apps/route": "app/api/apps/route.js",
   "/api/wallpaper/route": "app/api/wallpaper/route.js",
-  "/api/apps/route": "app/api/apps/route.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/apps/instances/route": "app/api/apps/instances/route.js"
 }

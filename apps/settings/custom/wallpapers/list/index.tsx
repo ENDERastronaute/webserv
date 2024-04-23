@@ -1,4 +1,4 @@
-import useWallpapers from "@/lib/utils/hooks/useWallpapers";
+import useWallpapers from "@utils/hooks/states//useWallpapers";
 import WallpaperCard from "../wallpaperCard";
 
 export default function List() {

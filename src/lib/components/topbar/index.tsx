@@ -1,19 +1,22 @@
 
 import CloseBtn from './btns/close';
 import styles from './index.module.scss';
-import { App } from '@/lib/utils/files/applications';
+import { AppInstance } from '$types';
 
 interface TopbarProps {
-    app: App;
-    setApp: (app: App) => void;
+    app: AppInstance;
+    setApp: (app: AppInstance) => void;
     title: string;
+    parentRef: React.RefObject<HTMLDivElement>;
     startDrag: (evt: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-export default function Topbar({ app, title, setApp, startDrag }: TopbarProps) {
+export default function Topbar({ app, title, setApp, parentRef, startDrag }: TopbarProps) {
     const closeApp = () => {
         app.opened = false;
         setApp(app);
+
+        parentRef.current!.style.display = 'none';
     }
 
 

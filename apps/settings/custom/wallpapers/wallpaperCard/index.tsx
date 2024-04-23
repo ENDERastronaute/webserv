@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from './index.module.scss';
 import { useContext } from "react";
-import WallpaperContext from "@/lib/utils/hooks/wallpaperContext";
+import WallpaperContext from "@/lib/utils/hooks/contexts/wallpaperContext";
 
 interface WallpaperCardProps {
     wallpaper: string

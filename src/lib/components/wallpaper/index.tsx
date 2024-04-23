@@ -1,6 +1,6 @@
 'use client'
 
-import WallpaperContext from "@/lib/utils/hooks/wallpaperContext";
+import WallpaperContext from "@utils/hooks/contexts/wallpaperContext";
 import Image from "next/image";
 import { useContext } from "react";
 import styles from './index.module.scss';

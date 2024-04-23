@@ -1,5 +1,7 @@
-import applicationsManager, { App } from "@/lib/utils/files/applications";
+import applicationsManager from "@utils/files/applications";
+import { App, AppInstance } from "$types";
 import Config from "@/lib/utils/files/config";
+import FileManager from "@/lib/utils/files/fileManager";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
@@ -15,17 +17,23 @@ export async function GET() {
 
 export async function PATCH(req: NextRequest) {
     const body = await req.json();
-    const data: App = body.data;
+    const data: AppInstance = body.data;
+    const id: number = body.id;
     
-    const app = applicationsManager.get(data.name);
-    
-    app.height = data.height;
-    app.width = data.width;
-    app.left = data.left;
-    app.top = data.top;
-    app.opened = data.opened;
-
-    await applicationsManager.write();
+    const app = applicationsManager.updateInstance(data.name, id, data);
     
     return NextResponse.json(app);
+}
+
+export async function PUT(req: NextRequest) {
+    const body = await req.json();
+    const name: string = body.name;
+
+    const image = await FileManager.get('appIcon', name);
+
+    const headers = new Headers();
+    
+    headers.set("Content-Type", "image/*");
+
+    return new NextResponse(image, { status: 200, headers: headers });
 }

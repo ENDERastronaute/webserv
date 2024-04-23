@@ -14,8 +14,14 @@ export async function sign(payload: any): Promise<string> {
         .sign(new TextEncoder().encode(process.env.JWT_SECRET))
 }
 
-export async function verify(token: string): Promise<JWTPayload> {
-    let payload: JWTPayload = (await jwtVerify(token, new TextEncoder().encode(process.env.JWT_SECRET))).payload;
+export async function verify(token: string): Promise<JWTPayload|undefined> {
+    let payload: JWTPayload|undefined;
+
+    try {
+        payload = (await jwtVerify(token, new TextEncoder().encode(process.env.JWT_SECRET))).payload;
+    }
+    catch {}
+    
 
     return payload;
 }

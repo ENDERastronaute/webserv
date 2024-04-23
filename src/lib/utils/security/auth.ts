@@ -10,5 +10,5 @@ export async function isAuthenticated(request: NextRequest): Promise<boolean> {
 
     const payload = await verify(cookie);
 
-    return (payload.payload as any).id === process.env.ID;
+    return payload !== undefined && (payload.payload as any).id === process.env.ID;
 }

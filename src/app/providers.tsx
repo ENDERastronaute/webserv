@@ -1,7 +1,7 @@
 'use client'
 
-import useWallpaper from "@/lib/utils/hooks/useWallpaper";
-import WallpaperContext from "@/lib/utils/hooks/wallpaperContext";
+import useWallpaper from "@utils/hooks/states//useWallpaper";
+import WallpaperContext from "@utils/hooks/contexts/wallpaperContext";
 
 interface ProvidersProps {
     children: React.ReactNode;

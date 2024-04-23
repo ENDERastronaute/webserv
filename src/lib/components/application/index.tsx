@@ -1,13 +1,13 @@
-import { App } from "@/lib/utils/files/applications"
+import { AppInstance } from "$types"
 import dynamic from "next/dynamic";
 import Topbar from "../topbar";
 import { useRef, useState } from "react";
 import styles from './index.module.scss';
-import useMovable from "@/lib/utils/hooks/useMovable";
-import useApp from "@/lib/utils/hooks/useApp";
+import useMovable from "@utils/hooks/states/useMovable";
+import useApp from "@utils/hooks/states/useApp";
 
 interface ApplicationProps {
-    app: App;
+    app: AppInstance;
 }
 
 export default function Application({ app }: ApplicationProps) {
@@ -22,10 +22,11 @@ export default function Application({ app }: ApplicationProps) {
 
         updateApp(app);
     }, draggedRef);
+    
 
     return (
         <article ref={draggedRef} className={`${styles.app} ${application.opened ? styles.open : ''} app_container`} style={{width: application.width, height: application.height, left: application.left + 'px', top: application.top + 'px' }}>
-            <Topbar app={application} setApp={updateApp} title="Settings" startDrag={startDrag}></Topbar>
+            <Topbar parentRef={draggedRef} app={application} setApp={updateApp} title="Settings" startDrag={startDrag}></Topbar>
             <ApplicationComponent></ApplicationComponent>
         </article>
     )
