@@ -13,7 +13,7 @@ export default class FileManager {
                 const imageName = files.filter(fichier => regex.test(fichier))[0];
                 
                 if (!imageName) {
-                    return await readFile('./icons/file.svg');
+                    return await readFile('./apps/default.svg');
                 }
             
                 const image = await readFile(`./apps/${name.toLowerCase()}/${imageName}`);
