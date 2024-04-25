@@ -1,3 +1,4 @@
+import { AppInstance } from "@/lib/types";
 import applicationsManager from "@/lib/utils/files/applications";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -17,10 +18,9 @@ export async function PUT(req: NextRequest) {
 
 export async function DELETE(req: NextRequest) {
     const body = await req.json();
-    const name: string = body.name;
-    const id: number = body.id;
+    const instance: AppInstance = body.instance;
 
-    await applicationsManager.removeInstance(name, id)
+    await applicationsManager.removeInstance(instance)
 
     return NextResponse.json(true);
 }

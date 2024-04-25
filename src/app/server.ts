@@ -8,16 +8,22 @@ import { redirect } from "next/navigation";
 
 export async function login(formData: FormData) {
     const password = formData.get('password');
-    const username = formData.get('username');
+    const username = formData.get('username') as string;
 
     try {
-        const result = execSync(`echo "${password}" | su ${username} -c "cat ./configs/.login"`).toString().trim();
+        if (!username.includes('&') && !username.includes('|') && !username.includes(';')) {
+            const result = execSync(`echo "${password}" | su ${username} -c "cat ./configs/.login"`).toString().trim();
 
-        if (result !== 'test') {
+            if (result !== 'test') {
+                return;
+            }
+    
+            cookies().set('id', await sign({ id: process.env.ID }));
+        }
+        else {
             return;
         }
-        
-        cookies().set('id', await sign({ id: process.env.ID }));
+
 
     } catch {
         return;

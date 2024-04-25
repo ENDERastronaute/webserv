@@ -2,5 +2,26 @@
 .article {
     width: 64px;
     height: 64px;
-    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .img {
+        height: 48px;
+        width: 48px;
+    }
+
+    &.active::before {
+        content: '';
+        height: 5px;
+        width: 54px;  
+        left: 50%;
+        border-radius: 5px;
+        background-color: rgb(121, 121, 211);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+    }
 }

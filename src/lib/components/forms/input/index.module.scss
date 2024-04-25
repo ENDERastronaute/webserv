@@ -1,0 +1,66 @@
+
+@use '@styles/vars';
+
+.fieldset {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: none;
+    gap: 10px;
+    margin: 10px 0 0 0;
+    padding: 15px 0 0;
+    width: 65%;
+
+    input {
+        border: 0;
+        border-bottom: 2px solid vars.$light_secondary;
+        outline: 0;
+        background-color: transparent;
+        transition: border-color 0.2s;
+        width: 100%;
+        padding: 7px 0 7px 0;
+        font-weight: 300;
+        font-size: 1.3rem;
+
+        &::placeholder {
+            color: transparent;
+        }
+
+        &:placeholder-shown ~ label {
+            font-size: 1.3rem;
+            cursor: text;
+            top: 20px;
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: .2s;
+        font-size: 1rem;
+    }
+
+    input:focus {
+        border-width: 3px;
+        padding-bottom: 6px;
+        border-color: vars.$light_secondary;
+        border-image-slice: 1;
+
+        ~ label {
+            position: absolute;
+            top: 0px;
+            display: block;
+            transition: .2s;
+            font-size: 1rem;
+        }
+    }
+
+    input {
+        &:required, &:invalid {
+            box-shadow: none;
+        }
+    }
+}

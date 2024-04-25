@@ -3,8 +3,8 @@ interface ApplicationInstance {
     left: number;
     height: number;
     width: number;
-    opened: boolean;
     name: string;
+    pid: string;
 }
 
 export interface App {

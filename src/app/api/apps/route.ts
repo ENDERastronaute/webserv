@@ -18,22 +18,11 @@ export async function GET() {
 export async function PATCH(req: NextRequest) {
     const body = await req.json();
     const data: AppInstance = body.data;
-    const id: number = body.id;
+
+    console.log(data);
     
-    const app = applicationsManager.updateInstance(data.name, id, data);
+    
+    const app = applicationsManager.updateInstance(data);
     
     return NextResponse.json(app);
-}
-
-export async function PUT(req: NextRequest) {
-    const body = await req.json();
-    const name: string = body.name;
-
-    const image = await FileManager.get('appIcon', name);
-
-    const headers = new Headers();
-    
-    headers.set("Content-Type", "image/*");
-
-    return new NextResponse(image, { status: 200, headers: headers });
 }

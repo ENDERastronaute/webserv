@@ -4,7 +4,7 @@ import { AppInstance } from "@/lib/types";
 import { createContext } from "react";
 
 interface Actions {
-    close: (ref: React.RefObject<HTMLElement>) => void
+    close: (pid: string) => void
     open: (instance: AppInstance) => void
 }
 

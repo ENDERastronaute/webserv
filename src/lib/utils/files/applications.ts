@@ -1,6 +1,7 @@
 
 import { readFile, writeFile } from "fs/promises";
 import { App, AppInstance } from '$types';
+import { randomBytes } from "crypto";
 
 const DEFAULT_HEIGHT = 650;
 const DEFAULT_WIDTH = 600;
@@ -23,25 +24,33 @@ class ApplicationsManager {
 
     public async addInstance(name: string): Promise<AppInstance> {
         const app = this.get(name);
-        app.instances.push({ top: 0, left: 0, height: DEFAULT_HEIGHT, width: DEFAULT_WIDTH, opened: false, name: name });
+        const pid = randomBytes(3).toString('hex');
+
+        app.instances.push({ top: 0, left: 0, height: DEFAULT_HEIGHT, width: DEFAULT_WIDTH, name: name, pid: pid });
 
         await this.write();
 
-        return { top: 0, left: 0, height: DEFAULT_HEIGHT, width: DEFAULT_WIDTH, opened: false, name: name }
+        return { top: app.top, left: app.left, height: DEFAULT_HEIGHT, width: DEFAULT_WIDTH, name: name, pid: pid }
     }
 
-    public async updateInstance(name: string, index: number, data: AppInstance) {
-        const app = this.get(name);
+    public async updateInstance(data: AppInstance) {
+        const app = this.get(data.name);        
 
-        app.instances[index] = data;
+        app.instances = app.instances.map(instance => {
+            if (instance.pid === data.pid) {
+                return data;
+            }
+
+            return instance;
+        })
 
         await this.write();
     }
 
-    public async removeInstance(name: string, index: number) {
-        const app = this.get(name);
+    public async removeInstance(instance: AppInstance) {
+        const app = this.get(instance.name);
 
-        const instance = app.instances.splice(index)[0];
+        app.instances = app.instances.filter(ist => ist.pid !== instance.pid);
 
         if (app.instances.length === 0) {
             app.left = instance.left;
@@ -51,8 +60,8 @@ class ApplicationsManager {
         await this.write();
     }
 
-    public getInstance(name: string, index: number) {
-        return this.get(name).instances[index];
+    public getInstance(instance: AppInstance) {
+        return this.get(instance.name).instances.filter(ist => ist.pid === instance.pid)[0];
     }
 
     public async write() {

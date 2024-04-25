@@ -4,11 +4,7 @@ import styles from './index.module.scss';
 import { App } from '$types';
 import DockIcon from '../dockIcon';
 
-interface DockProps {
-    applications: App[]|undefined
-}
-
-export default function Dock({ applications }: DockProps) {
+export default function Dock() {
     const [apps, setApps] = useState<App[]>()
 
     useEffect(() => {

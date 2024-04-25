@@ -2,21 +2,25 @@
 import CloseBtn from './btns/close';
 import styles from './index.module.scss';
 import { AppInstance } from '$types';
+import ActionsContext from '@/lib/utils/hooks/contexts/actionsContext';
+import { useContext } from 'react';
 
 interface TopbarProps {
     app: AppInstance;
-    setApp: (app: AppInstance) => void;
     title: string;
-    parentRef: React.RefObject<HTMLDivElement>;
     startDrag: (evt: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-export default function Topbar({ app, title, setApp, parentRef, startDrag }: TopbarProps) {
-    const closeApp = () => {
-        app.opened = false;
-        setApp(app);
+export default function Topbar({ app, title, startDrag }: TopbarProps) {
+    const actions = useContext(ActionsContext);
+    
+    const closeApp = async () => {
+        await fetch('/api/apps/instances', {
+            method: 'delete',
+            body: JSON.stringify({ instance: app })
+        })
 
-        parentRef.current!.style.display = 'none';
+        actions?.close(app.pid);
     }
 
 

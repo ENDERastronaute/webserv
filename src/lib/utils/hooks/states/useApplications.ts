@@ -17,5 +17,5 @@ export default function useApplications() {
         (async () => await fetchApplications())()
     }, []);
 
-    return applications;
+    return { applications, setApplications };
 }
