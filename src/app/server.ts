@@ -6,7 +6,7 @@ import { execSync } from "child_process"
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export async function login(formData: FormData) {
+export async function login(prevState: any, formData: FormData) {
     const password = formData.get('password');
     const username = formData.get('username') as string;
 
@@ -15,18 +15,24 @@ export async function login(formData: FormData) {
             const result = execSync(`echo "${password}" | su ${username} -c "cat ./configs/.login"`).toString().trim();
 
             if (result !== 'test') {
-                return;
+                return {
+                    message: 'Invalid credentials'
+                };
             }
     
             cookies().set('id', await sign({ id: process.env.ID }));
         }
         else {
-            return;
+            return {
+                message: 'Invalid credentials'
+            };
         }
 
 
     } catch {
-        return;
+        return {
+            message: 'Invalid credentials'
+        };
     }
 
     redirect('/view')

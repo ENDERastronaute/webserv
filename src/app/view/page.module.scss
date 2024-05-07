@@ -1,5 +1,61 @@
+@use '@styles/vars';
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: vars.$light_dock_bg;
+
+    .user {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+
+        .menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            height: 200px;
+            width: 200px;
+            background-color: vars.$light_dock_bg;
+            border-bottom-left-radius: 23px;
+            border-top: 2pt solid rgb(232, 253, 255);
+
+            button {
+                .icon {
+                    color: black;
+                }
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    button {
+        background: none;
+        border: none;
+        height: 32px;
+        width: 32px;
+
+        .icon {
+            color: rgb(255, 255, 255);
+            height: inherit;
+            width: inherit;
+        }
+    }
+}
 
 .main {
-
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(64px, 1fr));
+    gap: 1px;
 }

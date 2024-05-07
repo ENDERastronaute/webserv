@@ -31,7 +31,24 @@
         flex-direction: column;
         gap: 20px;
         border-radius: 23px;
+        position: relative;
+        padding: 40px 0 0 0;
 
+        p {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            background-color: rgb(255, 45, 45);
+            color: white;
+            padding: 10px;
+            width: 350px;
+            border-radius: 0 0 23px 23px;
 
+            &.active {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
     }
 }

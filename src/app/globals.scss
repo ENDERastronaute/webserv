@@ -6,6 +6,10 @@
     list-style: none;
 }
 
+html {
+    overflow: hidden;
+}
+
 .app, .tab {
     border-radius: 0 0 19px 19px;
     width: 100%;

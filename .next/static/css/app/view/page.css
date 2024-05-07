@@ -12,7 +12,58 @@
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/app/view/page.module.scss ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.page_header__uIDNt {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: rgba(203, 222, 240, 0.911);
+}
+.page_header__uIDNt .page_user__PtaYA {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.page_header__uIDNt .page_user__PtaYA .page_menu__mAJ1I {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  height: 200px;
+  width: 200px;
+  background-color: rgba(203, 222, 240, 0.911);
+  border-bottom-left-radius: 23px;
+  border-top: 2pt solid rgb(232, 253, 255);
+}
+.page_header__uIDNt .page_user__PtaYA .page_menu__mAJ1I button .page_icon__Q8_Sy {
+  color: black;
+}
+.page_header__uIDNt .page_user__PtaYA .page_menu__mAJ1I.page_active__yN0H_ {
+  display: block;
+}
+.page_header__uIDNt button {
+  background: none;
+  border: none;
+  height: 32px;
+  width: 32px;
+}
+.page_header__uIDNt button .page_icon__Q8_Sy {
+  color: rgb(255, 255, 255);
+  height: inherit;
+  width: inherit;
+}
 
+.page_main__w1YNe {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(64px, 1fr));
+  grid-gap: 1px;
+  gap: 1px;
+}
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/lib/components/topbar/btns/close/index.module.scss ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -72,6 +123,9 @@
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.281);
   border-radius: 50px;
   padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/lib/components/dockIcon/index.module.scss ***!

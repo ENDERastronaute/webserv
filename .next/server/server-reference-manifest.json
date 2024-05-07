@@ -1,5 +1,14 @@
 {
-  "node": {},
+  "node": {
+    "97dceece0b5568001e824bd65109d9742e66b994": {
+      "workers": {
+        "app/view/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fleny%2FDocuments%2Fprojects%2Fwebserv%2Fsrc%2Fapp%2Fview%2Fserver.ts%22%2C%5B%22logout%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/view/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "ElLF5AzprKLPlejVKRW8y0ofLnZInnu3V/RKn6ojlSw="
+  "encryptionKey": "z4rt5hY24rM4Vrg08yBVJzavcKwywlOypfqfQvBYtDg="
 }

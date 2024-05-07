@@ -38,20 +38,21 @@ $ mkdir ./apps/{my_app}/ && touch ./apps/{my_app}/index.tsx
 
 > /!\ App name must be in lowercase and spaced with underscores, like "app_name".
 
-Next, create your component.
-
-Finally, add your app name in the list `applications=` in `./configs/config.cfg`.
-
-```cfg
-applications=["Settings", "File_Explorer", "{My_App_Name}"]
-```
+Then create your component.
 
 > There's a lot of hooks and server side things you can use in your app.
 
-> TODO : make a tutorial.
+# Todo
+
+1. Add right click menu
+2. Add draggable/put down component (files)
+3. Add customizable routes ?
+4. Add a tutorial
+5. Add customizable styles
 
 # Known bugs
 
 Here's a list of known bugs
 
-- None, I don't know if I should be happy or worried about that.
+- Sometimes apps cannot closed and json gets bugged
+- A single app can appear more than once in the json
