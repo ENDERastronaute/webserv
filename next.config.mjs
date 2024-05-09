@@ -1,3 +1,4 @@
+
 import sass from 'sass'
 
 /** @type {import('next').NextConfig} */

@@ -5,7 +5,6 @@ import { useContext, useEffect, useState } from "react";
 import styles from './index.module.scss';
 import ActionsContext from "@/lib/utils/hooks/contexts/actionsContext";
 import InstancesContext from "@/lib/utils/hooks/contexts/instancesContext";
-import Menu from "@/lib/utils/menu";
 
 interface DockIconProps {
     app: App
@@ -14,7 +13,6 @@ interface DockIconProps {
 export default function DockIcon({ app }: DockIconProps) {
     const allInstances = useContext(InstancesContext)!;
     const [instances, setInstances] = useState<AppInstance[]>();
-    const menu = new Menu(instances!);
 
     useEffect(() => {
         if (allInstances) {

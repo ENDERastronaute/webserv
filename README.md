@@ -46,13 +46,12 @@ Then create your component.
 
 1. Add right click menu
 2. Add draggable/put down component (files)
-3. Add customizable routes ?
-4. Add a tutorial
-5. Add customizable styles
+3. Add a tutorial
+4. Add customizable styles
 
 # Known bugs
 
 Here's a list of known bugs
 
-- Sometimes apps cannot closed and json gets bugged
-- A single app can appear more than once in the json
+- Sometimes display can bug and apps may need a refresh to be closed.
+- Terminal doesn't work.
