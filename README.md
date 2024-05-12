@@ -44,9 +44,9 @@ Then create your component.
 
 # Todo
 
-1. Add right click menu
-2. Add draggable/put down component (files)
-3. Add a tutorial
+1. Add draggable/put down component (files)
+2. Add a tutorial
+3. Optimize menus
 4. Add customizable styles
 
 # Known bugs

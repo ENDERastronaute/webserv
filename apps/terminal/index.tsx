@@ -2,11 +2,14 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './index.module.scss';
 import { execute } from './server';
+import Menu from "@apps/settings/menu";
 
 interface Output {
     command: string;
     result: string;
 }
+
+export let _dockmenu_ = Menu;
 
 export default function Terminal() {
     const [command, setCommand] = useState('');

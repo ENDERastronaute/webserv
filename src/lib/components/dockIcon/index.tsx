@@ -5,6 +5,7 @@ import {useContext, useEffect, useRef, useState} from "react";
 import styles from './index.module.scss';
 import ActionsContext from "@/lib/utils/hooks/contexts/actionsContext";
 import InstancesContext from "@/lib/utils/hooks/contexts/instancesContext";
+import ContextMenu from "@/lib/components/contextMenu";
 
 interface DockIconProps {
     app: App
@@ -26,8 +27,6 @@ export default function DockIcon({ app }: DockIconProps) {
 
         (async () => {
             const module = await import(`../../../../apps/${app.name.toLocaleLowerCase()}`);
-
-            console.log(module._dockmenu_)
 
             setMenu(module._dockmenu_ ? module._dockmenu_ : null);
         })()
@@ -56,15 +55,16 @@ export default function DockIcon({ app }: DockIconProps) {
     }
 
     return (
-        instances && <article className={`${styles.article} ${instances!.length > 0 ? styles.active : ''}`} onClick={handleClick}>
+        instances &&
+        <article className={`${styles.article} ${instances!.length > 0 ? styles.active : ''}`} onClick={handleClick}>
             <Image className={styles.img} src={`/api/apps/instances/icons/${app.name.toLowerCase()}`} alt="icon" width={64} height={64} onContextMenu={handleMenu}></Image>
-            <menu ref={menuRef} className={styles.menu}>
+            <ContextMenu menuref={menuRef} className={styles.menu}>
                 {
                     Menu
                         ? [Menu][0]
                         : <div></div>
                 }
-            </menu>
+            </ContextMenu>
 
         </article>
     )
