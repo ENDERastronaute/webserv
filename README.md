@@ -46,7 +46,7 @@ Then create your component.
 
 1. Add draggable/put down component (files)
 2. Add a tutorial
-3. Optimize menus
+3. Optimize menus ?
 4. Add customizable styles
 
 # Known bugs

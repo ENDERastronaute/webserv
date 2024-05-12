@@ -6,7 +6,7 @@ import styles from "./page.module.scss";
 import useLockscreen from "@/lib/utils/hooks/states/useLockscreen";
 import Input from "@/lib/components/forms/input";
 import { useFormState } from "react-dom";
-import Submit from "@/lib/components/submit";
+import Submit from "../lib/components/forms/submit";
 
 export default function Login() {
 	const { lockscreen } = useLockscreen();

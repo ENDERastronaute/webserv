@@ -1,0 +1,14 @@
+
+@use 'vars';
+
+.btn {
+    background-color: vars.$light_secondary;
+    color: rgb(241, 241, 241);
+    border: none;
+    padding: 7px 30px;
+
+    &:disabled {
+        background-color: vars.$light_dock_bg;
+        color: black;
+    }
+}

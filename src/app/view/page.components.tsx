@@ -1,8 +1,8 @@
-import Wallpaper from "@/lib/components/wallpaper";
+import Wallpaper from "../../lib/components/desktop/wallpaper";
 import styles from './page.module.scss';
 import useApplications from "@utils/hooks/states/useApplications";
-import Application from "@/lib/components/application";
-import Dock from "@/lib/components/dock";
+import Application from "../../lib/components/desktop/application";
+import Dock from "../../lib/components/docks/dock";
 import ActionsContext from "@/lib/utils/hooks/contexts/actionsContext";
 import InstancesContext from "@/lib/utils/hooks/contexts/instancesContext";
 import { AppInstance } from "@/lib/types";
@@ -31,8 +31,13 @@ export default function Desktop() {
 
     const mainRef = useRef<HTMLDivElement>(null);
 
-    const close = (pid: string) => {   
-        const tempInstances = instances?.filter(instance => instance.pid !== pid);
+    const close = async (instance: AppInstance) => {
+        const tempInstances = instances?.filter(instance => instance.pid !== instance.pid);
+
+        await fetch('/api/apps/instances', {
+            method: 'delete',
+            body: JSON.stringify({ instance: instance })
+        })
 
         applications?.forEach(application => {
             application.instances = tempInstances.filter(instance => instance.name === application.name);
@@ -58,8 +63,8 @@ export default function Desktop() {
         setShowUserMenu(!showUserMenu);
     }
 
-    const handleLogout = () => {
-        logout();
+    const handleLogout = async () => {
+        await logout();
     }
 
     const handleMenu = (evt: React.MouseEvent<any>) => {
