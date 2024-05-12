@@ -61,6 +61,10 @@ export default function Desktop() {
     const handleLogout = () => {
         logout();
     }
+
+    const handleMenu = (evt: React.MouseEvent<any>) => {
+        evt.preventDefault();
+    }
     
     return (
         <ActionsContext.Provider value={{ open, close }}>
@@ -76,7 +80,7 @@ export default function Desktop() {
             {
                 instances && 
                 <InstancesContext.Provider value={{ instances, setInstances }}>
-                    <main className={styles.main} ref={mainRef}>
+                    <main className={styles.main} ref={mainRef} onContextMenu={handleMenu}>
                         <Wallpaper></Wallpaper>
                         {
                             instances && instances.map((instance, instanceIndex) => (

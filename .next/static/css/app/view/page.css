@@ -149,11 +149,15 @@
   content: "";
   height: 5px;
   width: 54px;
-  left: 50%;
   border-radius: 5px;
   background-color: rgb(121, 121, 211);
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%);
+}
+.dockIcon_article__HZG5b .dockIcon_menu__rJHxg {
+  display: none;
+  position: absolute;
+  bottom: 100%;
 }

@@ -1,6 +1,8 @@
 
+import styles from './index.module.scss';
+
 export default function Menu() {
     return (
-        <menu></menu>
+        <menu className={styles.menu}></menu>
     )
 }

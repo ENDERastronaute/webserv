@@ -25,7 +25,7 @@ export default function Application({ app }: ApplicationProps) {
     
 
     return (
-        <article ref={draggedRef} className={`${styles.app} ${application.opened ? styles.open : ''} app_container`} style={{width: application.width, height: application.height, left: application.left + 'px', top: application.top + 'px' }}>
+        <article ref={draggedRef} className={`${styles.app} app_container`} style={{width: application.width, height: application.height, left: application.left + 'px', top: application.top + 'px' }}>
             <Topbar app={application} title={app.name} startDrag={startDrag}></Topbar>
             <ApplicationComponent></ApplicationComponent>
         </article>

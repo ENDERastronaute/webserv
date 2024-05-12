@@ -1,7 +1,7 @@
 import { App, AppInstance } from "$types";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import {useContext, useEffect, useRef, useState} from "react";
 import styles from './index.module.scss';
 import ActionsContext from "@/lib/utils/hooks/contexts/actionsContext";
 import InstancesContext from "@/lib/utils/hooks/contexts/instancesContext";
@@ -13,13 +13,25 @@ interface DockIconProps {
 export default function DockIcon({ app }: DockIconProps) {
     const allInstances = useContext(InstancesContext)!;
     const [instances, setInstances] = useState<AppInstance[]>();
+    const [Menu, setMenu] = useState<any>(null);
+
+    const menuRef = useRef<HTMLMenuElement>(null);
+
 
     useEffect(() => {
         if (allInstances) {
           const filteredInstances = allInstances.instances.filter(instance => instance.name === app.name);
           setInstances(filteredInstances);
         }
-      }, [allInstances]);
+
+        (async () => {
+            const module = await import(`../../../../apps/${app.name.toLocaleLowerCase()}`);
+
+            console.log(module._dockmenu_)
+
+            setMenu(module._dockmenu_ ? module._dockmenu_ : null);
+        })()
+    }, [allInstances]);
 
     const actions = useContext(ActionsContext);
 
@@ -37,10 +49,23 @@ export default function DockIcon({ app }: DockIconProps) {
         }
     }
 
+    const handleMenu = async (evt: React.MouseEvent<any>) => {
+        evt.preventDefault();
+
+        menuRef.current!.style.display = "block";
+    }
+
     return (
         instances && <article className={`${styles.article} ${instances!.length > 0 ? styles.active : ''}`} onClick={handleClick}>
-            <Image className={styles.img} src={`/api/apps/instances/icons/${app.name.toLowerCase()}`} alt="icon" width={64} height={64}></Image>
-            <div></div>
+            <Image className={styles.img} src={`/api/apps/instances/icons/${app.name.toLowerCase()}`} alt="icon" width={64} height={64} onContextMenu={handleMenu}></Image>
+            <menu ref={menuRef} className={styles.menu}>
+                {
+                    Menu
+                        ? [Menu][0]
+                        : <div></div>
+                }
+            </menu>
+
         </article>
     )
 }

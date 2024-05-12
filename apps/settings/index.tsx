@@ -1,9 +1,9 @@
 
 import WallpapersTab from "./custom/wallpapers";
 import styles from './index.module.scss';
-import Menu from "./menu";
+import Menu from './menu';
 
-export let menu = Menu;
+export let _dockmenu_ = Menu;
 
 export default function SettingsApp() {
     return (

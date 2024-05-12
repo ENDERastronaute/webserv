@@ -197,7 +197,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "4b95c7331516f45e"; }
+/******/ 		__webpack_require__.h = function() { return "7f2fe2ea6779c618"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -796,7 +796,7 @@
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = function(chunkId, promises) {
-/******/ 			var cssChunks = {"_app-pages-browser_apps_settings_index_tsx":1,"_app-pages-browser_apps_settings_custom_wallpapers_index_tsx":1,"_app-pages-browser_apps_settings_custom_wallpapers_index_module_scss":1,"_app-pages-browser_apps_settings_custom_wallpapers_list_index_tsx":1,"_app-pages-browser_apps_settings_custom_wallpapers_wallpaperCard_index_tsx":1,"_app-pages-browser_apps_settings_custom_wallpapers_wallpaperCard_index_module_scss":1,"_app-pages-browser_apps_settings_index_module_scss":1,"_app-pages-browser_apps_terminal_index_tsx":1,"_app-pages-browser_apps_terminal_index_module_scss":1};
+/******/ 			var cssChunks = {"_app-pages-browser_apps_settings_index_tsx":1,"_app-pages-browser_apps_settings_custom_wallpapers_index_tsx":1,"_app-pages-browser_apps_settings_custom_wallpapers_index_module_scss":1,"_app-pages-browser_apps_settings_custom_wallpapers_list_index_tsx":1,"_app-pages-browser_apps_settings_custom_wallpapers_wallpaperCard_index_tsx":1,"_app-pages-browser_apps_settings_custom_wallpapers_wallpaperCard_index_module_scss":1,"_app-pages-browser_apps_settings_index_module_scss":1,"_app-pages-browser_apps_settings_menu_index_tsx":1,"_app-pages-browser_apps_settings_menu_index_module_scss":1,"_app-pages-browser_apps_terminal_index_tsx":1,"_app-pages-browser_apps_terminal_index_module_scss":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(function() {

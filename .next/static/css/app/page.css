@@ -1,0 +1,120 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/app/page.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.page_main__akH3E {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: auto;
+  height: 100vh;
+  width: 100%;
+  padding: 10%;
+}
+.page_main__akH3E img {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.page_main__akH3E .page_login__YmZVk {
+  width: 350px;
+  height: 450px;
+  background-color: aliceblue;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 23px;
+  position: relative;
+  padding: 40px 0 0 0;
+}
+.page_main__akH3E .page_login__YmZVk p {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(255, 45, 45);
+  color: white;
+  padding: 10px;
+  width: 350px;
+  border-radius: 0 0 23px 23px;
+}
+.page_main__akH3E .page_login__YmZVk p.page_active__tAjuN {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/lib/components/forms/input/index.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.input_fieldset__gtG3X {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: none;
+  gap: 10px;
+  margin: 10px 0 0 0;
+  padding: 15px 0 0;
+  width: 65%;
+}
+.input_fieldset__gtG3X input {
+  border: 0;
+  border-bottom: 2px solid rgb(48, 145, 255);
+  outline: 0;
+  background-color: transparent;
+  transition: border-color 0.2s;
+  width: 100%;
+  padding: 7px 0 7px 0;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+.input_fieldset__gtG3X input::placeholder {
+  color: transparent;
+}
+.input_fieldset__gtG3X input:placeholder-shown ~ label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+.input_fieldset__gtG3X label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+.input_fieldset__gtG3X input:focus {
+  border-width: 3px;
+  padding-bottom: 6px;
+  border-color: rgb(48, 145, 255);
+  border-image-slice: 1;
+}
+.input_fieldset__gtG3X input:focus ~ label {
+  position: absolute;
+  top: 0px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+.input_fieldset__gtG3X input:required, .input_fieldset__gtG3X input:invalid {
+  box-shadow: none;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/lib/components/submit/index.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.submit_btn__P9f8n {
+  background-color: rgb(48, 145, 255);
+  color: rgb(241, 241, 241);
+  border: none;
+  padding: 7px 30px;
+}
+.submit_btn__P9f8n:disabled {
+  background-color: rgba(203, 222, 240, 0.911);
+  color: black;
+}
