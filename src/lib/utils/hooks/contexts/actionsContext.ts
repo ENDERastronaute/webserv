@@ -4,7 +4,7 @@ import { AppInstance } from "@/lib/types";
 import { createContext } from "react";
 
 interface Actions {
-    close: (pid: string) => void
+    close: (instance: AppInstance) => void
     open: (instance: AppInstance) => void
 }
 

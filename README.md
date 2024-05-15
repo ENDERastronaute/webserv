@@ -2,7 +2,7 @@
 # WebServ (temporary name)
 
 Webserv is a server manager tool that allows you to access your server from anywhere.
-It also allows you to use a GUI without the need of Xorg/Wayland and any WM.
+It also allows you to use a GUI without the need of any display server.
 
 # Getting started
 
@@ -27,26 +27,11 @@ You can now start the program with :
 $ npm run dev
 ```
 
-# Creating applications
-
-That's not something most of you will need but here's how to create/modify applications :
-
-first, create a component in `./apps/` (file name must be app name) :
-```bash
-$ mkdir ./apps/{my_app}/ && touch ./apps/{my_app}/index.tsx
-```
-
-> /!\ App name must be in lowercase and spaced with underscores, like "app_name".
-
-Then create your component.
-
-> There's a lot of hooks and server side things you can use in your app.
-
 # Todo
 
-1. Add right click menu
-2. Add draggable/put down component (files)
-3. Add a tutorial
+1. Add draggable/put down component (files)
+2. Add a tutorial
+3. Optimize menus ?
 4. Add customizable styles
 
 # Known bugs
