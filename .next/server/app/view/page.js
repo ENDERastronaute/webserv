@@ -29,18 +29,6 @@ var map = {
 		9,
 		"_ssr_apps_settings_index_tsx"
 	],
-	"./settings/api/route": [
-		"(ssr)/./apps/settings/api/route.ts",
-		9,
-		"vendor-chunks/next",
-		"_ssr_apps_settings_api_route_ts"
-	],
-	"./settings/api/route.ts": [
-		"(ssr)/./apps/settings/api/route.ts",
-		9,
-		"vendor-chunks/next",
-		"_ssr_apps_settings_api_route_ts"
-	],
 	"./settings/custom/wallpapers": [
 		"(ssr)/./apps/settings/custom/wallpapers/index.tsx",
 		9,
@@ -182,7 +170,7 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return Promise.all(ids.slice(2).map(__webpack_require__.e)).then(() => {
+	return __webpack_require__.e(ids[2]).then(() => {
 		return __webpack_require__.t(id, ids[1] | 16)
 	});
 }
@@ -575,7 +563,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (\"562a09ac3e5d\");\nif (false) {}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvYXBwL2dsb2JhbHMuc2NzcyIsIm1hcHBpbmdzIjoiOzs7O0FBQUEsaUVBQWUsY0FBYztBQUM3QixJQUFJLEtBQVUsRUFBRSxFQUF1QiIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYnNlcnYvLi9zcmMvYXBwL2dsb2JhbHMuc2Nzcz85ZTA0Il0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0IFwiNTYyYTA5YWMzZTVkXCJcbmlmIChtb2R1bGUuaG90KSB7IG1vZHVsZS5ob3QuYWNjZXB0KCkgfVxuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/app/globals.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (\"bd277566c069\");\nif (false) {}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvYXBwL2dsb2JhbHMuc2NzcyIsIm1hcHBpbmdzIjoiOzs7O0FBQUEsaUVBQWUsY0FBYztBQUM3QixJQUFJLEtBQVUsRUFBRSxFQUF1QiIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYnNlcnYvLi9zcmMvYXBwL2dsb2JhbHMuc2Nzcz85ZTA0Il0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0IFwiYmQyNzc1NjZjMDY5XCJcbmlmIChtb2R1bGUuaG90KSB7IG1vZHVsZS5ob3QuYWNjZXB0KCkgfVxuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/app/globals.scss\n");
 
 /***/ }),
 

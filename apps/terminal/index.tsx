@@ -39,7 +39,7 @@ export default function Terminal() {
     }
 
     return (
-        <div className={`${styles.terminal} tab`}>
+        <div className={`${styles.terminal} app`}>
             <form onSubmit={handleSubmit}>
                 {
                     output.map((out, index)=> (

@@ -1,5 +1,7 @@
-import applicationsManager, { App } from "./applications";
+import applicationsManager from "./applications";
 import config from "./config";
+
+import { App } from '$types';
 
 class Dock {
     private _apps: App[] = [];

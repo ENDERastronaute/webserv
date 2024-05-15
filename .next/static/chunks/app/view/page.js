@@ -25,16 +25,6 @@ var map = {
 		9,
 		"_app-pages-browser_apps_settings_index_tsx"
 	],
-	"./settings/api/route": [
-		"(app-pages-browser)/./apps/settings/api/route.ts",
-		9,
-		"_app-pages-browser_apps_settings_api_route_ts"
-	],
-	"./settings/api/route.ts": [
-		"(app-pages-browser)/./apps/settings/api/route.ts",
-		9,
-		"_app-pages-browser_apps_settings_api_route_ts"
-	],
 	"./settings/custom/wallpapers": [
 		"(app-pages-browser)/./apps/settings/custom/wallpapers/index.tsx",
 		9,
