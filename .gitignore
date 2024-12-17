@@ -1,5 +1,6 @@
 node_modules/
 .idea/
+.next/
 .env
 public/wallpapers/*
 !public/wallpapers/default.jpg
